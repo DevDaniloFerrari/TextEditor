@@ -33,18 +33,21 @@ void Edit()
         text += Console.ReadLine() + Environment.NewLine;
     while (Console.ReadKey().Key != ConsoleKey.Escape);
 
-    Console.Write(text);
+    Save(text);
 }
 
-void Save(string text){
+void Save(string text)
+{
     Console.Clear();
     Console.WriteLine("What path to save the file?");
     var path = Console.ReadLine();
 
     using (var file = new StreamWriter(path))
-    {
         file.Write(text);
-    }
+
+    Console.WriteLine($"File {path} successfuly saved!");
+    Console.ReadLine();
+    Menu();
 }
 
 Menu();
