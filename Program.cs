@@ -19,7 +19,17 @@
 
 void Open()
 {
+    Console.Clear();
+    Console.WriteLine("What path to read the file?");
+    var path = Console.ReadLine();
+    var text = "";
 
+    using (var file = new StreamReader(path))
+        text = file.ReadToEnd();
+
+    Console.WriteLine(text);
+    Console.ReadLine();
+    Menu();
 }
 
 void Edit()
