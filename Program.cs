@@ -36,4 +36,15 @@ void Edit()
     Console.Write(text);
 }
 
+void Save(string text){
+    Console.Clear();
+    Console.WriteLine("What path to save the file?");
+    var path = Console.ReadLine();
+
+    using (var file = new StreamWriter(path))
+    {
+        file.Write(text);
+    }
+}
+
 Menu();
