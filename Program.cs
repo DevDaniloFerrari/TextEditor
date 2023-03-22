@@ -18,12 +18,22 @@
 }
 
 void Open()
-{ 
+{
 
 }
 
-void Edit(){
+void Edit()
+{
+    Console.Clear();
+    Console.WriteLine("Write your text below (ESC to exit)");
+    Console.WriteLine("---------------------");
+    string text = "";
 
+    do
+        text += Console.ReadLine() + Environment.NewLine;
+    while (Console.ReadKey().Key != ConsoleKey.Escape);
+
+    Console.Write(text);
 }
 
 Menu();
